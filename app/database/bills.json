@@ -1,1 +1,17 @@
-[]
+[
+    {
+        "order_id": 1,
+        "customer_name": "Aryan Alvi",
+        "table_no": 1,
+        "category": "Breakfast",
+        "item_name": "Poha",
+        "type": "Full",
+        "quantity": 2,
+        "amount": 140.0,
+        "discount": 0,
+        "gst": 25.2,
+        "final_amount": 165.2,
+        "payment_mode": "Not Selected",
+        "payment_status": "Pending"
+    }
+]

@@ -43,9 +43,7 @@ def add_staff():
 
         if staff["staff_id"] == staff_id:
 
-            print_error(
-                "Staff ID Already Exists"
-            )
+            print_error("Staff ID Already Exists")
 
             return
 
@@ -67,15 +65,10 @@ def add_staff():
     staffs.append(staff)
 
 
-    write_data(
-        STAFF_FILE,
-        staffs
-    )
+    write_data(STAFF_FILE,staffs)
 
 
-    print_success(
-        "Staff Added Successfully"
-    )
+    print_success("Staff Added Successfully")
 
 
 
@@ -98,9 +91,7 @@ def view_staff():
 
     if len(staffs) == 0:
 
-        print_error(
-            "No Staff Found"
-        )
+        print_error("No Staff Found")
 
         return
 
@@ -108,9 +99,7 @@ def view_staff():
 
 
 
-    print(
-        f"\nTotal Staff : {len(staffs)}"
-    )
+    print(f"\nTotal Staff : {len(staffs)}")
 
 
 
@@ -119,31 +108,21 @@ def view_staff():
 
         print("\n"+"="*45)
 
-        print(
-            "STAFF DETAILS".center(45)
-        )
+        print("STAFF DETAILS".center(45))
 
         print("="*45)
 
 
-        print(
-            f"Staff ID : {staff['staff_id']}"
-        )
+        print(f"Staff ID : {staff['staff_id']}")
 
 
-        print(
-            f"Name     : {staff['name']}"
-        )
+        print(f"Name     : {staff['name']}")
 
 
-        print(
-            f"Role     : {staff['role']}"
-        )
+        print(f"Role     : {staff['role']}")
 
 
-        print(
-            f"Salary   : ₹{staff['salary']}"
-        )
+        print(f"Salary   : ₹{staff['salary']}")
 
 
         print("="*45)
@@ -171,16 +150,12 @@ def update_staff():
 
     try:
 
-        staff_id = int(
-            input("Enter Staff ID : ")
-        )
+        staff_id = int(input("Enter Staff ID : "))
 
 
     except ValueError:
 
-        print_error(
-            "Invalid Staff ID"
-        )
+        print_error("Invalid Staff ID")
 
         return
 
@@ -198,29 +173,21 @@ def update_staff():
 
 
 
-            staff["name"] = input(
-                "New Name : "
-            )
+            staff["name"] = input("New Name : ")
 
 
-            staff["role"] = input(
-                "New Role : "
-            )
+            staff["role"] = input("New Role : ")
 
 
 
             try:
 
-                staff["salary"] = float(
-                    input("New Salary : ")
-                )
+                staff["salary"] = float(input("New Salary : "))
 
 
             except ValueError:
 
-                print_error(
-                    "Invalid Salary"
-                )
+                print_error("Invalid Salary")
 
                 return
 
@@ -228,16 +195,11 @@ def update_staff():
 
 
 
-            write_data(
-                STAFF_FILE,
-                staffs
-            )
+            write_data(STAFF_FILE,staffs)
 
 
 
-            print_success(
-                "Staff Updated Successfully"
-            )
+            print_success("Staff Updated Successfully")
 
 
             return
@@ -246,9 +208,8 @@ def update_staff():
 
 
 
-    print_error(
-        "Staff Not Found"
-    )
+    print_error("Staff Not Found"
+)
 
 
 
@@ -273,16 +234,12 @@ def delete_staff():
 
     try:
 
-        staff_id = int(
-            input("Enter Staff ID : ")
-        )
+        staff_id = int(input("Enter Staff ID : "))
 
 
     except ValueError:
 
-        print_error(
-            "Invalid Staff ID"
-        )
+        print_error("Invalid Staff ID")
 
         return
 
@@ -304,24 +261,16 @@ def delete_staff():
             print("-"*30)
 
 
-            print(
-                "Name :",
-                staff["name"]
-            )
+            print("Name :",staff["name"])
 
-            print(
-                "Role :",
-                staff["role"]
-            )
+            print("Role :",staff["role"])
 
 
             print("-"*30)
 
 
 
-            confirm = input(
-                "Delete Staff? (Y/N) : "
-            )
+            confirm = input("Delete Staff? (Y/N) : ")
 
 
 
@@ -332,22 +281,15 @@ def delete_staff():
                 staffs.remove(staff)
 
 
-                write_data(
-                    STAFF_FILE,
-                    staffs
-                )
+                write_data(STAFF_FILE,staffs)
 
 
-                print_success(
-                    "Staff Deleted Successfully"
-                )
+                print_success("Staff Deleted Successfully")
 
 
             else:
 
-                print(
-                    "Delete Cancelled"
-                )
+                print("Delete Cancelled")
 
 
 
@@ -357,6 +299,4 @@ def delete_staff():
 
 
 
-    print_error(
-        "Staff Not Found"
-    )
+    print_error("Staff Not Found")

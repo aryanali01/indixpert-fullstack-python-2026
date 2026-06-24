@@ -1,1 +1,8 @@
-[]
+[
+    {
+        "staff_id": 1,
+        "name": "Aman",
+        "role": "Manager",
+        "salary": 50000.0
+    }
+]

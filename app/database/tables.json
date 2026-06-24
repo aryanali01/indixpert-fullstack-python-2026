@@ -1,1 +1,9 @@
-[]
+[
+    {
+        "booking_id": 1,
+        "customer_name": "Aryan Alvi",
+        "mobile": "7589896775",
+        "table_no": 1,
+        "status": "Booked"
+    }
+]

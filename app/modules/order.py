@@ -23,37 +23,25 @@ def place_order():
 
     try:
 
-        order_id = int(
-            input("Enter Order ID : ")
-        )
+        order_id = int(input("Enter Order ID : "))
 
-        table_no = int(
-            input("Enter Table Number : ")
-        )
+        table_no = int(input("Enter Table Number : "))
 
-        item_id = int(
-            input("Enter Item ID : ")
-        )
+        item_id = int(input("Enter Item ID : "))
 
-        quantity = int(
-            input("Enter Quantity : ")
-        )
+        quantity = int(input("Enter Quantity : "))
 
 
     except ValueError:
 
-        print_error(
-            "Only Number Allowed"
-        )
+        print_error("Only Number Allowed")
 
         return
 
 
 
 
-    customer_name = input(
-        "Enter Customer Name : "
-    )
+    customer_name = input("Enter Customer Name : ")
 
 
 
@@ -65,9 +53,7 @@ def place_order():
         if order["order_id"] == order_id:
 
 
-            print_error(
-                "Order ID Already Exists"
-            )
+            print_error("Order ID Already Exists")
 
             return
 
@@ -112,9 +98,7 @@ def place_order():
     if selected_item is None:
 
 
-        print_error(
-            "Item Not Found"
-        )
+        print_error("Item Not Found")
 
         return
 
@@ -132,9 +116,7 @@ def place_order():
 
 
 
-    choice=input(
-        "Enter Choice : "
-    )
+    choice=input("Enter Choice : ")
 
 
 
@@ -163,9 +145,7 @@ def place_order():
     else:
 
 
-        print_error(
-            "Invalid Type"
-        )
+        print_error("Invalid Type")
 
         return
 
@@ -184,133 +164,64 @@ def place_order():
     order = {
 
 
-        "order_id":
-        order_id,
-
-
-        "customer_name":
-        customer_name,
-
-
-        "table_no":
-        table_no,
+        "order_id":order_id,
+        "customer_name":customer_name,
+        "table_no":table_no,
+        "category":category_name,
+        "item_id":item_id,
+        "item_name":selected_item["name"],
 
 
 
-        "category":
-        category_name,
+        "food_type":selected_item.get("food_type","Veg"),
 
 
 
-        "item_id":
-        item_id,
-
-
-
-        "item_name":
-        selected_item["name"],
-
-
-
-        "food_type":
-        selected_item.get(
-            "food_type",
-            "Veg"
-        ),
-
-
-
-        "type":
-        order_type,
-
-
-
-        "quantity":
-        quantity,
-
-
-
-        "price":
-        price,
-
-
-
-        "total":
-        total,
-
-
-
-        "status":
-        "Pending"
+        "type":order_type,
+        "quantity":quantity,
+        "price":price,
+        "total":total,
+        
+        "status":"Pending"
 
     }
-
-
-
-
-
-
-
+    
+    
     orders.append(order)
 
 
 
-    write_data(
-        ORDER_FILE,
-        orders
-    )
+    write_data(ORDER_FILE,orders)
 
 
 
 
-    print_success(
-        "Order Placed Successfully"
-    )
+    print_success("Order Placed Successfully")
 
 
 
     print("\n========== ORDER SUMMARY ==========")
 
 
-    print(
-        "Category :",
-        category_name
-    )
+    print("Category :",category_name)
 
 
-    print(
-        "Item :",
-        selected_item["name"]
-    )
+    print("Item :",selected_item["name"])
 
 
-    print(
-        "Type :",
-        order_type
-    )
+    print("Type :",order_type)
 
 
-    print(
-        "Price : ₹",
-        price
-    )
+    print("Price : ₹",price)
 
 
-    print(
-        "Quantity :",
-        quantity
-    )
+    print("Quantity :",quantity)
 
 
-    print(
-        "Total : ₹",
-        total
-    )
+    print("Total : ₹",total)
 
 
-    print(
-        "=================================="
-    )
+    print("==================================")
 
 
 
@@ -326,23 +237,17 @@ def place_order():
 def view_orders():
 
 
-    print_header(
-        "ORDER HISTORY"
-    )
+    print_header("ORDER HISTORY")
 
 
-    orders = read_data(
-        ORDER_FILE
-    )
+    orders = read_data(ORDER_FILE)
 
 
 
     if not orders:
 
 
-        print_error(
-            "No Orders Found"
-        )
+        print_error("No Orders Found")
 
         return
 
@@ -358,9 +263,7 @@ def view_orders():
         print("\n"+"="*55)
 
 
-        print(
-            "RESTAURANT ORDER".center(55)
-        )
+        print("RESTAURANT ORDER".center(55))
 
 
         print("="*55)
@@ -368,64 +271,34 @@ def view_orders():
 
 
 
-        print(
-            "Order ID :",
-            order["order_id"]
-        )
+        print("Order ID :",order["order_id"])
 
 
-        print(
-            "Customer :",
-            order["customer_name"]
-        )
+        print("Customer :",order["customer_name"])
 
 
-        print(
-            "Table :",
-            order["table_no"]
-        )
+        print("Table :",order["table_no"])
 
 
-        print(
-            "Category :",
-            order["category"]
-        )
+        print("Category :",order["category"])
 
 
-        print(
-            "Item :",
-            order["item_name"]
-        )
+        print("Item :",order["item_name"])
 
 
-        print(
-            "Type :",
-            order["type"]
-        )
+        print("Type :",order["type"])
 
 
-        print(
-            "Quantity :",
-            order["quantity"]
-        )
+        print("Quantity :",order["quantity"])
 
 
-        print(
-            "Price : ₹",
-            order["price"]
-        )
+        print("Price : ₹",order["price"])
 
 
-        print(
-            "Total : ₹",
-            order["total"]
-        )
+        print("Total : ₹",order["total"])
 
 
-        print(
-            "Status :",
-            order["status"]
-        )
+        print("Status :",order["status"])
 
 
         print("="*55)
@@ -444,31 +317,23 @@ def view_orders():
 def update_order():
 
 
-    print_header(
-        "UPDATE ORDER"
-    )
+    print_header("UPDATE ORDER")
 
 
 
-    orders = read_data(
-        ORDER_FILE
-    )
+    orders = read_data(ORDER_FILE)
 
 
 
     try:
 
-        order_id=int(
-            input("Enter Order ID : ")
-        )
+        order_id=int(input("Enter Order ID : "))
 
 
     except:
 
 
-        print_error(
-            "Invalid ID"
-        )
+        print_error("Invalid ID")
 
         return
 
@@ -487,17 +352,13 @@ def update_order():
 
             try:
 
-                qty=int(
-                    input("New Quantity : ")
-                )
+                qty=int(input("New Quantity : "))
 
 
             except:
 
 
-                print_error(
-                    "Invalid Quantity"
-                )
+                print_error("Invalid Quantity")
 
                 return
 
@@ -510,25 +371,17 @@ def update_order():
 
 
 
-            order["total"] = (
-                qty *
-                order["price"]
-            )
+            order["total"] = (qty *order["price"])
 
 
 
 
 
-            write_data(
-                ORDER_FILE,
-                orders
-            )
+            write_data(ORDER_FILE,orders)
 
 
 
-            print_success(
-                "Order Updated Successfully"
-            )
+            print_success("Order Updated Successfully")
 
 
             return
@@ -537,9 +390,7 @@ def update_order():
 
 
 
-    print_error(
-        "Order Not Found"
-    )
+    print_error("Order Not Found")
 
 
 
@@ -556,30 +407,22 @@ def update_order():
 def cancel_order():
 
 
-    print_header(
-        "CANCEL ORDER"
-    )
+    print_header("CANCEL ORDER")
 
 
-    orders = read_data(
-        ORDER_FILE
-    )
+    orders = read_data(ORDER_FILE)
 
 
 
     try:
 
-        order_id=int(
-            input("Enter Order ID : ")
-        )
+        order_id=int(input("Enter Order ID : "))
 
 
     except:
 
 
-        print_error(
-            "Invalid ID"
-        )
+        print_error("Invalid ID")
 
         return
 
@@ -600,15 +443,10 @@ def cancel_order():
 
 
 
-            write_data(
-                ORDER_FILE,
-                orders
-            )
+            write_data(ORDER_FILE,orders)
 
 
-            print_success(
-                "Order Cancelled Successfully"
-            )
+            print_success("Order Cancelled Successfully")
 
 
             return
@@ -617,6 +455,4 @@ def cancel_order():
 
 
 
-    print_error(
-        "Order Not Found"
-    )
+    print_error("Order Not Found")

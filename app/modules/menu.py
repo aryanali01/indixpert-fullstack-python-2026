@@ -49,17 +49,13 @@ def add_item():
     print_header("ADD RESTAURANT MENU ITEM")
 
 
-    menu = fix_menu(
-        read_data(MENU_FILE)
-    )
+    menu = fix_menu(read_data(MENU_FILE))
 
 
 
     try:
 
-        item_id = int(
-            input("Enter Item ID : ")
-        )
+        item_id = int(input("Enter Item ID : "))
 
     except:
 
@@ -77,9 +73,7 @@ def add_item():
 
             if item["id"] == item_id:
 
-                print_error(
-                    "Item Already Exists"
-                )
+                print_error("Item Already Exists")
 
                 return
 
@@ -93,17 +87,13 @@ def add_item():
 
     for i,c in enumerate(CATEGORIES,1):
 
-        print(
-            f"{i}. {c}"
-        )
+        print(f"{i}. {c}")
 
 
 
     try:
 
-        choice=int(
-            input("Select Category : ")
-        )
+        choice=int(input("Select Category : "))
 
 
         category=CATEGORIES[choice-1]
@@ -111,9 +101,7 @@ def add_item():
 
     except:
 
-        print_error(
-            "Invalid Category"
-        )
+        print_error("Invalid Category")
 
         return
 
@@ -122,14 +110,10 @@ def add_item():
 
 
 
-    name=input(
-        "Enter Food Name : "
-    )
+    name=input("Enter Food Name : ")
 
 
-    food_type=input(
-        "Veg / Non-Veg : "
-    )
+    food_type=input("Veg / Non-Veg : ")
 
 
 
@@ -137,21 +121,15 @@ def add_item():
 
     try:
 
-        half=float(
-            input("Half Price : ₹")
-        )
+        half=float(input("Half Price : ₹"))
 
 
-        full=float(
-            input("Full Price : ₹")
-        )
+        full=float(input("Full Price : ₹"))
 
 
     except:
 
-        print_error(
-            "Invalid Price"
-        )
+        print_error("Invalid Price")
 
         return
 
@@ -184,16 +162,11 @@ def add_item():
 
 
 
-    write_data(
-        MENU_FILE,
-        menu
-    )
+    write_data(MENU_FILE,menu)
 
 
 
-    print_success(
-        "Item Added Successfully"
-    )
+    print_success("Item Added Successfully")
 
 
 
@@ -208,14 +181,10 @@ def add_item():
 def view_items():
 
 
-    print_header(
-        "RESTAURANT MENU"
-    )
+    print_header("RESTAURANT MENU")
 
 
-    menu=fix_menu(
-        read_data(MENU_FILE)
-    )
+    menu=fix_menu(read_data(MENU_FILE))
 
 
 
@@ -224,9 +193,7 @@ def view_items():
 
         print("\n"+"="*55)
 
-        print(
-            category.center(55)
-        )
+        print(category.center(55))
 
         print("="*55)
 
@@ -234,9 +201,7 @@ def view_items():
 
         if not items:
 
-            print(
-                "No Items"
-            )
+            print("No Items")
 
 
 
@@ -244,34 +209,19 @@ def view_items():
 
 
 
-            print(
-                "ID          :",
-                item["id"]
-            )
+            print("ID          :",item["id"])
 
 
-            print(
-                "Name        :",
-                item["name"]
-            )
+            print("Name        :",item["name"])
 
 
-            print(
-                "Type        :",
-                item["food_type"]
-            )
+            print("Type        :",item["food_type"])
 
 
-            print(
-                "Half Price  : ₹",
-                item["half_price"]
-            )
+            print("Half Price  : ₹",item["half_price"])
 
 
-            print(
-                "Full Price  : ₹",
-                item["full_price"]
-            )
+            print("Full Price  : ₹",item["full_price"])
 
 
             print("-"*55)
@@ -289,19 +239,13 @@ def view_items():
 def search_item():
 
 
-    print_header(
-        "SEARCH ITEM"
-    )
+    print_header("SEARCH ITEM")
 
 
-    menu=fix_menu(
-        read_data(MENU_FILE)
-    )
+    menu=fix_menu(read_data(MENU_FILE))
 
 
-    name=input(
-        "Enter Food Name : "
-    )
+    name=input("Enter Food Name : ")
 
 
 
@@ -320,28 +264,17 @@ def search_item():
                 print("\nITEM FOUND")
 
 
-                print(
-                    "Category :",
-                    category
+                print("Category :",category)
+
+
+                print("Name :",item["name"])
+
+
+                print("Half : ₹",item["half_price"]
                 )
 
 
-                print(
-                    "Name :",
-                    item["name"]
-                )
-
-
-                print(
-                    "Half : ₹",
-                    item["half_price"]
-                )
-
-
-                print(
-                    "Full : ₹",
-                    item["full_price"]
-                )
+                print("Full : ₹",item["full_price"])
 
 
                 return
@@ -349,13 +282,7 @@ def search_item():
 
 
 
-    print_error(
-        "Item Not Found"
-    )
-
-
-
-
+    print_error("Item Not Found")
 
 
 
@@ -368,28 +295,20 @@ def search_item():
 def update_item():
 
 
-    print_header(
-        "UPDATE ITEM"
-    )
+    print_header("UPDATE ITEM")
 
 
-    menu=fix_menu(
-        read_data(MENU_FILE)
-    )
+    menu=fix_menu(read_data(MENU_FILE))
 
 
 
     try:
 
-        item_id=int(
-            input("Enter Item ID : ")
-        )
+        item_id=int(input("Enter Item ID : "))
 
     except:
 
-        print_error(
-            "Invalid ID"
-        )
+        print_error("Invalid ID")
 
         return
 
@@ -409,40 +328,27 @@ def update_item():
 
 
 
-                item["name"]=input(
-                    "New Name : "
-                )
+                item["name"]=input("New Name : ")
 
 
 
-                item["food_type"]=input(
-                    "New Type : "
-                )
+                item["food_type"]=input("New Type : ")
 
 
 
-                item["half_price"]=float(
-                    input("New Half Price : ")
-                )
+                item["half_price"]=float(input("New Half Price : "))
 
 
 
-                item["full_price"]=float(
-                    input("New Full Price : ")
-                )
+                item["full_price"]=float(input("New Full Price : "))
 
 
 
-                write_data(
-                    MENU_FILE,
-                    menu
-                )
+                write_data(MENU_FILE,menu)
 
 
 
-                print_success(
-                    "Updated Successfully"
-                )
+                print_success("Updated Successfully")
 
 
                 return
@@ -451,9 +357,7 @@ def update_item():
 
 
 
-    print_error(
-        "Item Not Found"
-    )
+    print_error("Item Not Found")
 
 
 
@@ -469,27 +373,19 @@ def update_item():
 def delete_item():
 
 
-    print_header(
-        "DELETE ITEM"
-    )
+    print_header("DELETE ITEM")
 
 
-    menu=fix_menu(
-        read_data(MENU_FILE)
-    )
+    menu=fix_menu(read_data(MENU_FILE))
 
 
     try:
 
-        item_id=int(
-            input("Enter Item ID : ")
-        )
+        item_id=int(input("Enter Item ID : "))
 
     except:
 
-        print_error(
-            "Invalid ID"
-        )
+        print_error("Invalid ID")
 
         return
 
@@ -513,15 +409,10 @@ def delete_item():
 
 
 
-                write_data(
-                    MENU_FILE,
-                    menu
-                )
+                write_data(MENU_FILE,menu)
 
 
-                print_success(
-                    "Deleted Successfully"
-                )
+                print_success("Deleted Successfully")
 
 
                 return
@@ -530,6 +421,4 @@ def delete_item():
 
 
 
-    print_error(
-        "Item Not Found"
-    )
+    print_error("Item Not Found")

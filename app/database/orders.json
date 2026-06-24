@@ -1,1 +1,16 @@
-[]
+[
+    {
+        "order_id": 1,
+        "customer_name": "Aryan Alvi",
+        "table_no": 1,
+        "category": "Breakfast",
+        "item_id": 1,
+        "item_name": "Poha",
+        "food_type": "veg",
+        "type": "Full",
+        "quantity": 2,
+        "price": 70.0,
+        "total": 140.0,
+        "status": "Pending"
+    }
+]

@@ -16,10 +16,7 @@ def read_data(file_path):
 
 
 
-        with open(
-            file_path,
-            "r"
-        ) as file:
+        with open(file_path,"r") as file:
 
 
             data = json.load(file)
@@ -33,9 +30,7 @@ def read_data(file_path):
     except json.JSONDecodeError:
 
 
-        print(
-            f"\n[ERROR] Invalid JSON Format : {file_path}"
-        )
+        print(f"\n[ERROR] Invalid JSON Format : {file_path}")
 
 
         return {}
@@ -47,9 +42,7 @@ def read_data(file_path):
     except Exception as e:
 
 
-        print(
-            f"\n[ERROR] {e}"
-        )
+        print(f"\n[ERROR] {e}")
 
 
         return {}
@@ -81,24 +74,15 @@ def write_data(file_path, data):
 
 
 
-        with open(
-            file_path,
-            "w"
-        ) as file:
+        with open(file_path,"w") as file:
 
 
-            json.dump(
-                data,
-                file,
-                indent=4
-            )
+            json.dump(data,file,indent=4)
 
 
 
 
-        print(
-            "\n[SUCCESS] Data Saved Successfully"
-        )
+        print("\n[SUCCESS] Data Saved Successfully")
 
 
 
@@ -107,6 +91,4 @@ def write_data(file_path, data):
     except Exception as e:
 
 
-        print(
-            f"\n[ERROR] {e}"
-        )
+        print(f"\n[ERROR] {e}")

@@ -1,1 +1,14 @@
-[]
+[
+    {
+        "id": 101,
+        "name": "Shubhendra singh",
+        "mobile": "7694866745",
+        "address": "Dholpur"
+    },
+    {
+        "id": 102,
+        "name": "Aman",
+        "mobile": "8748476934",
+        "address": "Dholpur"
+    }
+]

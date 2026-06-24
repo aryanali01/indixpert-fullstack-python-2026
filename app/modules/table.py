@@ -152,39 +152,27 @@ def update_booking():
             print("\nCurrent Details")
             print("-"*30)
 
-            print(
-                f"Customer : {table['customer_name']}"
-            )
+            print(f"Customer : {table['customer_name']}")
 
-            print(
-                f"Mobile : {table['mobile']}"
-            )
+            print(f"Mobile : {table['mobile']}")
 
-            print(
-                f"Table : {table['table_no']}"
-            )
+            print(f"Table : {table['table_no']}")
 
 
             print("-"*30)
 
 
 
-            table["customer_name"] = input(
-                "New Customer Name : "
-            )
+            table["customer_name"] = input("New Customer Name : ")
 
 
-            table["mobile"] = input(
-                "New Mobile Number : "
-            )
+            table["mobile"] = input("New Mobile Number : ")
 
 
 
             try:
 
-                new_table = int(
-                    input("New Table Number : ")
-                )
+                new_table = int(input("New Table Number : "))
 
 
             except ValueError:
@@ -198,15 +186,10 @@ def update_booking():
 
 
 
-            write_data(
-                TABLE_FILE,
-                tables
-            )
+            write_data(TABLE_FILE,tables)
 
 
-            print_success(
-                "Booking Updated Successfully"
-            )
+            print_success("Booking Updated Successfully")
 
 
             return
@@ -238,9 +221,7 @@ def cancel_booking():
 
     try:
 
-        booking_id = int(
-            input("Enter Booking ID : ")
-        )
+        booking_id = int(input("Enter Booking ID : "))
 
 
     except ValueError:
@@ -258,9 +239,7 @@ def cancel_booking():
 
 
 
-            confirm = input(
-                "Cancel Booking? (Y/N) : "
-            )
+            confirm = input("Cancel Booking? (Y/N) : ")
 
 
 
@@ -270,15 +249,10 @@ def cancel_booking():
                 tables.remove(table)
 
 
-                write_data(
-                    TABLE_FILE,
-                    tables
-                )
+                write_data(TABLE_FILE,tables)
 
 
-                print_success(
-                    "Booking Cancelled Successfully"
-                )
+                print_success("Booking Cancelled Successfully")
 
 
             else:

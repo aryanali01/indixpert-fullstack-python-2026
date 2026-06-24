@@ -90,57 +90,36 @@ def change_password():
 
         if user["username"] == username:
 
-            old_password = input(
-                "Enter Old Password : "
-            )
+            old_password = input("Enter Old Password : ")
 
             if user["password"] != old_password:
 
-                print_error(
-                    "Incorrect Old Password"
-                )
+                print_error("Incorrect Old Password")
 
                 return
 
-            new_password = input(
-                "Enter New Password : "
-            )
+            new_password = input("Enter New Password : ")
 
-            if not validate_password(
-                new_password
-            ):
+            if not validate_password(new_password):
 
-                print_error(
-                    "Password Must Be At Least 6 Characters"
-                )
+                print_error("Password Must Be At Least 6 Characters")
 
                 return
 
-            confirm_password = input(
-                "Confirm New Password : "
-            )
+            confirm_password = input("Confirm New Password : ")
 
             if new_password != confirm_password:
 
-                print_error(
-                    "Passwords Do Not Match"
-                )
+                print_error("Passwords Do Not Match")
 
                 return
 
             user["password"] = new_password
 
-            write_data(
-                USER_FILE,
-                users
-            )
+            write_data(USER_FILE,users)
 
-            print_success(
-                "Password Changed Successfully"
-            )
+            print_success("Password Changed Successfully")
 
             return
-
-    print_error(
-        "User Not Found"
-    )
+        
+        print_error("User Not Found")

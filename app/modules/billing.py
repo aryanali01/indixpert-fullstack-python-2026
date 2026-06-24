@@ -87,59 +87,43 @@ def generate_bill():
             bill = {
 
 
-                "order_id":
-                order["order_id"],
+                "order_id":order["order_id"],
 
 
-                "customer_name":
-                order["customer_name"],
+                "customer_name":order["customer_name"],
 
 
-                "table_no":
-                order["table_no"],
+                "table_no":order["table_no"],
 
 
-                "category":
-                order["category"],
+                "category":order["category"],
 
 
-                "item_name":
-                order["item_name"],
+                "item_name":order["item_name"],
 
 
-                "type":
-                order.get(
-                    "type",
-                    "Full"
-                ),
+                "type":order.get("type","Full"),
 
 
-                "quantity":
-                order["quantity"],
+                "quantity":order["quantity"],
 
 
-                "amount":
-                amount,
+                "amount":amount,
 
 
-                "discount":
-                discount,
+                "discount":discount,
 
 
-                "gst":
-                gst,
+                "gst":gst,
 
 
-                "final_amount":
-                final_amount,
+                "final_amount":final_amount,
 
 
-                "payment_mode":
-                "Not Selected",
+                "payment_mode":"Not Selected",
 
 
-                "payment_status":
-                "Pending"
+                "payment_status":"Pending"
 
             }
 
@@ -149,10 +133,7 @@ def generate_bill():
             bills.append(bill)
 
 
-            write_data(
-                BILL_FILE,
-                bills
-            )
+            write_data(BILL_FILE,bills)
 
 
 
@@ -168,12 +149,7 @@ def generate_bill():
 
 
 
-    print_error(
-        "Order Not Found"
-    )
-
-
-
+    print_error("Order Not Found")
 
 
 
@@ -192,91 +168,53 @@ def show_bill(bill):
 
     print("="*60)
 
-    print(
-        "ALVI ROYAL RESTAURANT BILL".center(60)
-    )
+    print("ALVI ROYAL RESTAURANT BILL".center(60))
 
     print("="*60)
 
 
 
-    print(
-        "Order ID     :",
-        bill["order_id"]
-    )
+    print("Order ID     :",bill["order_id"])
 
 
-    print(
-        "Customer     :",
-        bill["customer_name"]
-    )
+    print("Customer     :",bill["customer_name"])
 
 
-    print(
-        "Table        :",
-        bill["table_no"]
-    )
+    print("Table        :",bill["table_no"])
 
 
-    print(
-        "Category     :",
-        bill["category"]
-    )
+    print("Category     :",bill["category"])
 
 
-    print(
-        "Item         :",
-        bill["item_name"]
-    )
+    print("Item         :",bill["item_name"])
 
 
-    print(
-        "Type         :",
-        bill["type"]
-    )
+    print("Type         :",bill["type"])
 
 
-    print(
-        "Quantity     :",
-        bill["quantity"]
-    )
+    print("Quantity     :",bill["quantity"])
 
 
     print("-"*60)
 
 
 
-    print(
-        "Amount       : ₹",
-        bill["amount"]
-    )
+    print("Amount       : ₹",bill["amount"])
 
 
-    print(
-        "Discount     : ₹",
-        round(bill["discount"],2)
-    )
+    print("Discount     : ₹",round(bill["discount"],2))
 
 
-    print(
-        "GST 18%      : ₹",
-        round(bill["gst"],2)
-    )
+    print("GST 18%      : ₹",round(bill["gst"],2))
 
 
-    print(
-        "Final Amount : ₹",
-        round(bill["final_amount"],2)
-    )
+    print("Final Amount : ₹",round(bill["final_amount"],2))
 
 
     print("-"*60)
 
 
-    print(
-        "Payment      :",
-        bill["payment_status"]
-    )
+    print("Payment      :",bill["payment_status"])
 
 
     print("="*60)
@@ -296,9 +234,7 @@ def show_bill(bill):
 def view_bills():
 
 
-    print_header(
-        "ALL BILL HISTORY"
-    )
+    print_header("ALL BILL HISTORY")
 
 
     bills = read_data(BILL_FILE)
@@ -307,9 +243,7 @@ def view_bills():
 
     if not bills:
 
-        print_error(
-            "No Bills Found"
-        )
+        print_error("No Bills Found")
 
         return
 
@@ -336,9 +270,7 @@ def view_bills():
 def payment():
 
 
-    print_header(
-        "PAYMENT SYSTEM"
-    )
+    print_header("PAYMENT SYSTEM")
 
 
     bills = read_data(BILL_FILE)
@@ -347,17 +279,13 @@ def payment():
 
     try:
 
-        order_id=int(
-            input("Enter Order ID : ")
-        )
+        order_id=int(input("Enter Order ID : "))
 
 
     except ValueError:
 
 
-        print_error(
-            "Invalid ID"
-        )
+        print_error("Invalid ID")
 
         return
 
@@ -378,9 +306,7 @@ def payment():
             if bill["payment_status"]=="Paid":
 
 
-                print_error(
-                    "Payment Already Done"
-                )
+                print_error("Payment Already Done")
 
                 return
 
@@ -397,9 +323,7 @@ def payment():
 
 
 
-            choice=input(
-                "Select : "
-            )
+            choice=input("Select : ")
 
 
 
@@ -425,9 +349,7 @@ def payment():
 
             else:
 
-                print_error(
-                    "Invalid Choice"
-                )
+                print_error("Invalid Choice")
 
                 return
 
@@ -440,25 +362,14 @@ def payment():
 
 
 
-            write_data(
-                BILL_FILE,
-                bills
-            )
+            write_data(BILL_FILE,bills)
 
 
 
-            print_success(
-                "Payment Successful"
-            )
+            print_success("Payment Successful")
 
 
-            print(
-                "Paid Amount ₹",
-                round(
-                    bill["final_amount"],
-                    2
-                )
-            )
+            print("Paid Amount ₹",round(bill["final_amount"],2))
 
 
             return
