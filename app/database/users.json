@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "full_name": "Aryan Alvi",
+        "dob": "13-9-2005",
+        "address": "Dholpur",
+        "qualification": "12th",
+        "username": "aryan123",
+        "password": "123456"
+    },
+    {
+        "id": 2,
+        "full_name": "shubhendra singh",
+        "dob": "44333",
+        "address": "dfhduh39834232",
+        "qualification": "b009w",
+        "username": "jdf8955t9te5",
+        "password": "shubh3009"
+    }
+]
