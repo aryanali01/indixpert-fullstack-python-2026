@@ -34,5 +34,14 @@
         "qualification": "12th",
         "username": "iexp7",
         "password": "291769"
+    },
+    {
+        "id": 5,
+        "full_name": "ramesh",
+        "dob": "13-09-2005",
+        "address": "Dholpur",
+        "qualification": "12th",
+        "username": "ramesh123",
+        "password": "234567"
     }
 ]
