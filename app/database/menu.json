@@ -152,11 +152,11 @@
             "full_price": 280.0
         },
         {
-        "id": 22,
-        "name": "Paneer Lababdar + Naan",
-        "food_type": "veg",
-        "half_price": 140.0,
-        "full_price": 270.0
+            "id": 22,
+            "name": "Paneer Lababdar + Naan",
+            "food_type": "veg",
+            "half_price": 140.0,
+            "full_price": 270.0
         },
         {
             "id": 23,
@@ -215,7 +215,7 @@
             "full_price": 380.0
         }
     ],
-    "Fast Food":  [
+    "Fast Food": [
         {
             "id": 31,
             "name": "Cheese Burst Veg Burger",
@@ -287,7 +287,7 @@
             "full_price": 190.0
         }
     ],
-        "Chinese": [
+    "Chinese": [
         {
             "id": 41,
             "name": "Veg Hakka Noodles Special",
@@ -359,7 +359,7 @@
             "full_price": 340.0
         }
     ],
-        "South Indian": [
+    "South Indian": [
         {
             "id": 51,
             "name": "Plain Dosa Special",
@@ -431,7 +431,7 @@
             "full_price": 340.0
         }
     ],
-        "Soft Drinks": [
+    "Soft Drinks": [
         {
             "id": 61,
             "name": "Coca Cola Chilled",
@@ -503,7 +503,7 @@
             "full_price": 70.0
         }
     ],
-        "Mocktails": [
+    "Mocktails": [
         {
             "id": 71,
             "name": "Virgin Mojito Special",
@@ -575,7 +575,7 @@
             "full_price": 190.0
         }
     ],
-        "Ice Cream": [
+    "Ice Cream": [
         {
             "id": 81,
             "name": "Vanilla Ice Cream Cup",
@@ -647,7 +647,7 @@
             "full_price": 120.0
         }
     ],
-        "Desserts": [
+    "Desserts": [
         {
             "id": 91,
             "name": "Gulab Jamun Special",
@@ -717,9 +717,16 @@
             "food_type": "veg",
             "half_price": 90.0,
             "full_price": 180.0
+        },
+        {
+            "id": 111,
+            "name": "puding",
+            "food_type": "veg",
+            "half_price": 60.0,
+            "full_price": 120.0
         }
     ],
-        "Beverages": [
+    "Beverages": [
         {
             "id": 101,
             "name": "Masala Tea Special",
@@ -779,9 +786,9 @@
         {
             "id": 109,
             "name": "Oreo Milk Shake",
-            "food_type": "veg",
-            "half_price": 80.0,
-            "full_price": 150.0
+            "food_type": "Veg",
+            "half_price": 70.0,
+            "full_price": 140.0
         },
         {
             "id": 110,
@@ -791,4 +798,4 @@
             "full_price": 140.0
         }
     ]
-    }
+}

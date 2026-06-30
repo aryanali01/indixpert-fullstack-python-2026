@@ -16,5 +16,23 @@
         "qualification": "b009w",
         "username": "jdf8955t9te5",
         "password": "shubh3009"
+    },
+    {
+        "id": 3,
+        "full_name": "Wasim",
+        "dob": "13-09-2005",
+        "address": "Dholpur",
+        "qualification": "12th",
+        "username": "wasim123",
+        "password": "123456"
+    },
+    {
+        "id": 4,
+        "full_name": "Bhupendraa",
+        "dob": "23-02-2006",
+        "address": "xyz",
+        "qualification": "12th",
+        "username": "iexp7",
+        "password": "291769"
     }
 ]

@@ -12,5 +12,19 @@
         "price": 70.0,
         "total": 140.0,
         "status": "Pending"
+    },
+    {
+        "order_id": 5,
+        "customer_name": "wasim",
+        "table_no": 2,
+        "category": "Breakfast",
+        "item_id": 6,
+        "item_name": "samosa",
+        "food_type": "veg",
+        "type": "Full",
+        "quantity": -1,
+        "price": 25.0,
+        "total": -25.0,
+        "status": "Pending"
     }
 ]
